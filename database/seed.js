@@ -16,7 +16,6 @@ function generateData() {
       imageId = 2;
     }
     let i = 0;
-    const j = 0;
     while (i < 6) {
       const photo = `https://baileymediaplayer.s3-us-west-1.amazonaws.com/images/image${imageId}.jpeg`;
       photoArr.push(photo);
