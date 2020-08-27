@@ -18,6 +18,7 @@ font-size: 12px;
   font-family: Motiva Sans, Sans-Serif;
   line-height: 32px;
 }
+
 .col_container {
   display: flex;
   flex-direction: row;
@@ -29,8 +30,6 @@ font-size: 12px;
   margin-right: 16px;
   margin-top: 5px;
 }
-
-
 
 .title_image {
   display: flex;
@@ -122,16 +121,11 @@ font-size: 12px;
   background-color: #779abd;
 }
 
-
-
 .left_col {
   float: left;
   margin-right: 16px;
   margin-top: 5px;
 }
-
-
-
 
 .main_image {
   display: flex;
@@ -158,12 +152,10 @@ font-size: 12px;
   width: 600px;
 }
 
-
 #row::-webkit-scrollbar {
   height: 18px;
   width: 5px;
 }
-
 
 #row::-webkit-scrollbar-track {
   background: #16202d !important;
@@ -179,7 +171,6 @@ font-size: 12px;
   background-clip: padding-box;
 }
 
-
 #row::-webkit-scrollbar-track {
     background: #16202D !important;
     border: 1px solid #16202D !important;
@@ -189,7 +180,6 @@ font-size: 12px;
   background: #417a9b;
 }
 
-
 .col {
   display: inline-block;
   color: white;
@@ -198,7 +188,6 @@ font-size: 12px;
   margin: 4px;
   cursor: pointer;
 }
-
 
 .col_border {
   bottom: 100%;
@@ -215,8 +204,6 @@ font-size: 12px;
   cursor: pointer;
 }
 
-
-
 .scroll_row {
   display: flex;
   height: 18px;
@@ -227,7 +214,6 @@ font-size: 12px;
   width: 300px;
   border-radius: 3px;
 }
-
 
 .prev {
   position: absolute;
@@ -252,7 +238,6 @@ font-size: 12px;
   margin-top: 5px;
 }
 
-
 .next {
   position: absolute;
   width: 38px;
@@ -263,7 +248,6 @@ font-size: 12px;
   cursor: pointer;
   color: white;
   background-color: rgba( 35, 60, 81, 0.4 );
-
 }
 
 .next span {
@@ -288,5 +272,3 @@ font-size: 12px;
 .next:hover > span {
   background-position: -9px -7px;
 }
-
-
