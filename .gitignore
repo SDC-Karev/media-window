@@ -104,5 +104,5 @@ public/bundle.js
 
 # TernJS port file
 .tern-port
-.csv
+gameData.csv
 .DS_Store
