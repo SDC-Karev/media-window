@@ -56,12 +56,12 @@ const reviews = [
 const writeGameRecords = fs.createWriteStream('gameData.csv');
 writeGameRecords.write('images,videos,tags,name,description,all_reviews,recent_reviews,release_date,developer,publisher\n', 'utf8');
 
-let i = 1000;
+let i = 10000000;
 
 function write(callback) {
   let emptyRAM = true;
   while (i > 0 && emptyRAM) {
-    if (i % 250 === 0) {
+    if (i % 250000 === 0) {
       console.log(i);
     }
     i -= 1;
@@ -73,8 +73,8 @@ function write(callback) {
     const recentReviews = faker.random.arrayElement(reviews);
     const allReviews = faker.random.arrayElement(reviews);
     const releaseDate = faker.date.past(10);
-    const developer = faker.hacker.verb();
-    const publisher = faker.hacker.verb();
+    const developer = `${faker.hacker.verb()} ${faker.hacker.noun()}`;
+    const publisher = `${faker.hacker.verb()} ${faker.hacker.noun()}`;
     const primaryRecord = `"${images}","${videos}","${tags}",${gameTitle},${description},${recentReviews},${allReviews},${releaseDate},${developer},${publisher}\n`;
 
     if (i === 0) {
