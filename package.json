@@ -8,6 +8,7 @@
     "build-db": "webpack -d",
     "start": "nodemon server/index.js",
     "seed": "node database/seed.js",
+    "generate": "node database/dataGeneration.js",
     "build": "webpack --mode production",
     "test": "jest",
     "test:coverage": "jest --coverage --colors"

@@ -1,4 +1,4 @@
-const gameTags = [
+const allTags = [
   'Indie',
   'Action',
   'Adventure',
@@ -427,4 +427,4 @@ const gameTags = [
   'Action RTS',
 ];
 
-module.export = gameTags;
+module.exports.allTags = allTags;
