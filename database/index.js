@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/media-window', {useNewUrlParser: true});
+
+mongoose.connect('mongodb://localhost/media-window', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const gameSchema = new mongoose.Schema({
   id: Number,
@@ -9,16 +10,13 @@ const gameSchema = new mongoose.Schema({
   photoArr: Array,
 });
 
-const GameModel = mongoose.model('GameModel', gameSchema);
+const Game = mongoose.model('GameModel', gameSchema);
 
+// const multiSave = (data) => {
+//   GameModel.create(data, (err, result) => {
+//     if (err) console.log(err);
+//     console.log(result);
+//   });
+// };
 
-const save = (data) => {
-  GameModel.create(data, (err, result) => {
-    if (err) console.log(err);
-    console.log(result);
-  });
-}
-
-
-module.exports.save = save;
-module.exports.GameModel = GameModel;
+module.exports = Game;
