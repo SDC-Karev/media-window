@@ -8,20 +8,21 @@
     "build-db": "webpack -d",
     "start": "nodemon server/index.js",
     "seed": "node database/seed.js",
+    "generate": "node database/dataGeneration.js",
     "build": "webpack --mode production",
     "test": "jest",
     "test:coverage": "jest --coverage --colors"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hrr47-FEC-Bailey/media-window.git"
+    "url": "git+https://github.com/SDC-Karev/media-window.git"
   },
-  "author": "Tyler Jones",
+  "author": "Ryan Zigler",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hrr47-FEC-Bailey/media-window/issues"
+    "url": "https://github.com/SDC-Karev/media-window/issues"
   },
-  "homepage": "https://github.com/hrr47-FEC-Bailey/media-window#readme",
+  "homepage": "https://github.com/SDC-Karev/media-window#readme",
   "dependencies": {
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
@@ -30,7 +31,8 @@
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "flexbox-react": "^4.4.0",
-    "mongoose": "^5.9.27",
+    "mongodb": "^3.6.0",
+    "mongoose": "^5.10.0",
     "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
