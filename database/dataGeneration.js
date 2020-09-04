@@ -90,9 +90,10 @@ const reviews = [
 ];
 
 const writeGameRecords = fs.createWriteStream('gameData.csv');
-writeGameRecords.write('images,videos,tags,name,description,all_reviews,recent_reviews,release_date,developer,publisher\n', 'utf8');
+writeGameRecords.write('images,videos,tags,title,description,all_reviews,recent_reviews,release_date,developer,publisher\n', 'utf8');
 
 let i = 10000000;
+// let id = 0;
 
 function write(callback) {
   let emptyRAM = true;
@@ -101,6 +102,9 @@ function write(callback) {
       console.log(i);
     }
     i -= 1;
+    // id += 1;
+
+    // const dbID = id;
     const images = generateImages();
     const videos = generateVideos();
     const tags = generateTags();
@@ -111,7 +115,7 @@ function write(callback) {
     const releaseDate = generateDate();
     const developer = `${faker.hacker.verb()} ${faker.hacker.noun()}`;
     const publisher = `${faker.hacker.verb()} ${faker.hacker.noun()}`;
-    const primaryRecord = `"${images}","${videos}","${tags}",${gameTitle},${description},${recentReviews},${allReviews},${releaseDate},${developer},${publisher}\n`;
+    const primaryRecord = `"{${images}}","{${videos}}","{${tags}}","${gameTitle}","${description}","${recentReviews}","${allReviews}","${releaseDate}","${developer}","${publisher}"\n`;
 
     if (i === 0) {
       writeGameRecords.write(primaryRecord, 'utf8', callback);
