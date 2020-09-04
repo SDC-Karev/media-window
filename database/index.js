@@ -1,32 +1,23 @@
 const { Client } = require('pg');
-const {
-  dbUser, dbPort, dbHost, dbPassword,
-} = require('../server/config');
 
 const db = new Client({
-  user: dbUser,
-  host: dbHost,
-  database: 'media-window',
-  password: dbPassword,
-  port: dbPort,
+  user: process.env.PG_USER || 'ryanzigler',
+  password: process.env.PG_PASSWORD || 'supersecretpassword',
+  database: process.env.PG_DATABASE || 'media-window',
+  host: process.env.PG_HOST || 'localhost',
+  port: process.env.DB_PORT || 5432,
 });
 
-db.connect((err) => {
-  if (err) {
-    console.log(`The following error occurred while attempting to connect to the database: ${err}`);
-  } else {
-    console.log('Connected to the database');
-  }
-});
+db.connect();
 
-const getGamesByID = (id) => new Promise((resolve, reject) => {
-  db.query(`SELECT * FROM games WHERE id = ${id}`, (err, res) => {
-    if (err) {
-      reject(err);
-    } else {
-      resolve(res);
-    }
-  });
-});
+const getGameByID = (gameID, callback) => {
+  db.query('SELECT * FROM games WHERE id = $1', [gameID])
+    .then((results) => {
+      callback(null, results.rows);
+    })
+    .catch((error) => {
+      callback(error, null);
+    });
+};
 
-module.exports = getGamesByID;
+module.exports.getGameByID = getGameByID;

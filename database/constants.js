@@ -427,4 +427,4 @@ const allTags = [
   'Action RTS',
 ];
 
-module.exports.allTags = allTags;
+module.exports = allTags;

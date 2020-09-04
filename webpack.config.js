@@ -15,7 +15,7 @@ module.exports = {
         test: /\.jsx?/,
         include: path.resolve(__dirname, 'client'),
         // exclude: /(node_modules)/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
         query: {
           presets: ['@babel/react', '@babel/env'],
         },
