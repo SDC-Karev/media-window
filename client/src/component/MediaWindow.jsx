@@ -88,9 +88,9 @@ class MediaWindow extends React.Component {
     axios.get(`/api/mediaData/${game.id}`)
       .then(({ data }) => {
         console.log(data[0], 'data[0]')
-        const game = data[0];
+        //const game = data[0];
         const gameImages = data[0].images;
-        const gameVideos = data[0].videos;
+        //const gameVideos = data[0].videos;
 
         const imageMap = gameImages.map((img) => {
           const imgURL = `https://hrr47-sdc-steamy.s3.us-east-2.amazonaws.com/media-window/${img}`;
@@ -102,32 +102,32 @@ class MediaWindow extends React.Component {
           return imgObj;
         });
 
-        const videoMap = gameVideos.map((vid) => {
-          const vidURL = `https://www.youtube.com/embed/${vid}`;
-          const setActive = false;
-          const vidObj = {
-            video: vidURL,
-            isActive: setActive,
-          };
-          return vidObj;
-        });
-        videoMap[0].isActive = true;
-        console.log(videoMap[0].isActive, 'videoMap')
+        // const videoMap = gameVideos.map((vid) => {
+        //   const vidURL = `https://www.youtube.com/embed/${vid}`;
+        //   const setActive = false;
+        //   const vidObj = {
+        //     video: vidURL,
+        //     isActive: setActive,
+        //   };
+        //   return vidObj;
+        // });
+        // videoMap[0].isActive = true;
+        // console.log(videoMap[0].isActive, 'videoMap')
         this.setState({
           images: imageMap,
-          video: videoMap,
-          tag1: game.tag[0],
-          tag2: game.tag[1],
-          tag3: game.tag[2],
-          tag4: game.tag[3],
-          releaseDate: game.release_date,
-          recentReviews: game.recent_reviews,
-          allReviews: game.all_reviews,
-          publisher: game.publisher,
-          developer: game.developer,
-          description: game.description,
-          title: game.title,
-          currentMedia: videoMap[0],
+          //video: videoMap,
+          // tag1: game.tag[0],
+          // tag2: game.tag[1],
+          // tag3: game.tag[2],
+          // tag4: game.tag[3],
+          // releaseDate: game.release_date,
+          // recentReviews: game.recent_reviews,
+          // allReviews: game.all_reviews,
+          // publisher: game.publisher,
+          // developer: game.developer,
+          // description: game.description,
+          // title: game.title,
+          //currentMedia: videoMap[0],
         });
       })
       .catch((err) => {
