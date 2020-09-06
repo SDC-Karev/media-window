@@ -11,7 +11,7 @@ const port = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
-app.use('/(:gameID)', express.static(path.join(__dirname, '../public')));
+app.use('/:gameID', express.static(path.join(__dirname, '../public')));
 
 app.get('/api/mediaData/:gameID', (req, res) => {
   const { gameID } = req.params;
