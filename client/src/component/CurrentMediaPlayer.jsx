@@ -2,7 +2,6 @@ import React from "react";
 
 
 const CurrentMediaPlayer = (props) => {
-  console.log(props);
   var arr = props.currentMedia.split('.');
   if (arr.indexOf('jpeg') > -1) {
     return (

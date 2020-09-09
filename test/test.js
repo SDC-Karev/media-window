@@ -1,6 +1,5 @@
-const expect = require('chai').expect;
+const { expect } = require('chai');
 const axios = require('axios');
-
 
 describe('API calls', () => {
   it('should return media data for a game when ID is passed in', (done) => {
@@ -14,9 +13,8 @@ describe('API calls', () => {
         expect(res.data.description).to.exist;
         done();
       });
-      // .catch((err) => {
-      //   expect(err).to.not.exist;
-      // });
+    // .catch((err) => {
+    //   expect(err).to.not.exist;
+    // });
   });
-
 });
