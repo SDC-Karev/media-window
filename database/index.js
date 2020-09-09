@@ -1,11 +1,11 @@
 const { Client } = require('pg');
 
 const db = new Client({
-  user: process.env.PG_USER || 'ryanzigler',
-  password: process.env.PG_PASSWORD || 'supersecretpassword',
-  database: process.env.PG_DATABASE || 'media-window',
-  host: process.env.PG_HOST || 'localhost',
-  port: process.env.DB_PORT || 5432,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  host: process.env.DB_HOST,
+  port: 5432,
 });
 
 db.connect();
