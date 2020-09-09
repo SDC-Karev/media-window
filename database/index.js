@@ -1,22 +1,23 @@
-const mongoose = require('mongoose');
+const { Client } = require('pg');
 
-mongoose.connect('mongodb://localhost/media-window', { useNewUrlParser: true, useUnifiedTopology: true });
-
-const gameSchema = new mongoose.Schema({
-  id: Number,
-  title: String,
-  description: String,
-  videoArr: Array,
-  photoArr: Array,
+const db = new Client({
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  host: process.env.DB_HOST,
+  port: 5432,
 });
 
-const Game = mongoose.model('GameModel', gameSchema);
+db.connect();
 
-// const multiSave = (data) => {
-//   GameModel.create(data, (err, result) => {
-//     if (err) console.log(err);
-//     console.log(result);
-//   });
-// };
+const getGameByID = (gameID, callback) => {
+  db.query('SELECT * FROM games WHERE id = $1', [gameID])
+    .then((results) => {
+      callback(null, results.rows);
+    })
+    .catch((error) => {
+      callback(error, null);
+    });
+};
 
-module.exports = Game;
+module.exports.getGameByID = getGameByID;

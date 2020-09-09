@@ -106,3 +106,4 @@ public/bundle.js
 .tern-port
 gameData.csv
 .DS_Store
+newrelic.js
