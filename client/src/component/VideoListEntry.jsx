@@ -5,18 +5,15 @@ const VideoListEntry = (props) => {
   if (props.video.isActive === true) {
     return (
       <div className={styles.col_border}>
-        <iframe width="116" height="65" src={props.video.video} onClick={() => props.changeMedia(props.video.video)}></iframe>
+        <iframe width="116" height="65" src={props.video.video} onClick={() => props.changeMedia(props.video.video)} />
       </div>
-    )
-  } else {
-    return (
-      <div className={styles.col}>
-        <iframe width="116" height="65" src={props.video.video} onClick={() => props.changeMedia(props.video.video)}></iframe>
-      </div>
-    )
+    );
   }
-}
-
-
+  return (
+    <div className={styles.col}>
+      <iframe width="116" height="65" src={props.video.video} onClick={() => props.changeMedia(props.video.video)} />
+    </div>
+  );
+};
 
 export default VideoListEntry;
