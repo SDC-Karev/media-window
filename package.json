@@ -9,7 +9,7 @@
     "start": "nodemon server/index.js",
     "seed": "node database/seed.js",
     "generate": "node database/dataGeneration.js",
-    "build": "webpack --mode production",
+    "build": "webpack --config webpack.prod.js",
     "test": "jest",
     "test:coverage": "jest --coverage --colors"
   },
@@ -24,28 +24,30 @@
   },
   "homepage": "https://github.com/SDC-Karev/media-window#readme",
   "dependencies": {
+    "@gfx/zopfli": "^1.0.15",
     "axios": "^0.19.2",
+    "compression-webpack-plugin": "^5.0.2",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "flexbox-react": "^4.4.0",
+    "google-auth-library": "^6.0.6",
     "newrelic": "^6.13.0",
     "nodemon": "^2.0.4",
     "pg": "^8.3.3",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "webpack-merge": "^5.1.4"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
-    "@gfx/zopfli": "^1.0.15",
     "babel": "^6.23.0",
     "babel-jest": "^26.3.0",
     "babel-loader": "^8.1.0",
     "chai": "^4.2.0",
-    "compression-webpack-plugin": "^5.0.2",
     "css-loader": "^4.2.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.3",
@@ -62,7 +64,6 @@
     "react-test-renderer": "^16.13.1",
     "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12",
-    "webpack-merge": "^5.1.4"
+    "webpack-cli": "^3.3.12"
   }
 }
