@@ -1,5 +1,5 @@
 const { merge } = require('webpack-merge');
-const zopfli = require('zopfli');
+const zopfli = require('@gfx/zopfli');
 const CompressionPlugin = require('compression-webpack-plugin');
 const common = require('./webpack.config.js');
 
