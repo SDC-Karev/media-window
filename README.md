@@ -73,7 +73,7 @@ Update line 70 of ```media-window/client/src/component/MediaWindow.jsx``` with y
 
   - From within the root directory: `npm run generate`
 
-   > This will run `database/dataGeneration.js` and save the data into a CSV file in the project root directory.
+    - This will run `database/dataGeneration.js` and save the data into a CSV file in the project root directory.
 
 #### Seed database
 
@@ -85,10 +85,14 @@ Update line 70 of ```media-window/client/src/component/MediaWindow.jsx``` with y
 
 #### Start webpack
 
-  - Run webpack in production mode: `npm run build` 
-  - Run webpack once in dev mode: `npm run build-dev`
-  - Run webpack in dev and watch mode: `npm run react-dev`
+  - Run webpack in production mode: 
+    - `npm run build` 
+  - Run webpack once in dev mode: 
+    - `npm run build-dev`
+  - Run webpack in dev and watch mode: 
+    - `npm run react-dev`
 
 #### Start server
 
-  - Run node via nodemon: `npm start`
+  - Run node via nodemon: 
+    - `npm start`
