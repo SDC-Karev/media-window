@@ -85,16 +85,12 @@ From the project root directory: `psql YOUR_USERNAME -h YOUR_PG_HOST_IP (127.0.0
 
 #### Start webpack
 
-Run webpack in production mode
-`npm run build` 
+Run webpack in production mode: `npm run build` 
 
-Run webpack once in dev mode. If you make any changes, you will need to run this again to have webpack rebuild with your changes.
-`npm run build-dev`
+Run webpack once in dev mode: `npm run build-dev`
 
-Set webpack to watch in dev mode to autobuild on save.
-`npm run react-dev`
+Run webpack in dev and watch mode: `npm run react-dev`
 
 #### Start server
 
-Runs node via nodemon
-`npm start`
+Run node via nodemon: `npm start`
