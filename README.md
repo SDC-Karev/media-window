@@ -71,26 +71,26 @@ Update line 70 of ```media-window/client/src/component/MediaWindow.jsx``` with y
 
 #### Generate data
 
-From within the root directory: `npm run generate`
+  - From within the root directory: `npm run generate`
 
-This will run `database/dataGeneration.js` and save the data into a CSV file in the project root directory.
+   > This will run `database/dataGeneration.js` and save the data into a CSV file in the project root directory.
 
 #### Seed database
 
-Ensure you have PostgreSQL installed and setup for componenet to work; if your server is crashing immediately on launch, that is a good hint that PG is not installed/setup/running.
+##### Ensure you have PostgreSQL installed and setup for componenet to work; if your server is crashing immediately on launch, that is a good hint that PG is not installed/setup/running.
 
-Update line 4 of `database/postgresSeed.sql` to point to the full path of the CSV created in the previous setup if you want to use this script to seed the database.
+  - Update line 4 of `database/postgresSeed.sql` to point to the full path of the CSV created in the previous setup if you want to use this script to seed the database.
 
-From the project root directory: `psql YOUR_USERNAME -h YOUR_PG_HOST_IP (127.0.0.1 for localhost) -d SOME_DATABASE -f database/postgresSeed.sql`
+  - From the project root directory: `psql YOUR_USERNAME -h YOUR_PG_HOST_IP (127.0.0.1 for localhost) -d SOME_DATABASE -f database/postgresSeed.sql`
 
 #### Start webpack
 
-Run webpack in production mode: `npm run build` 
+  - Run webpack in production mode: `npm run build` 
 
-Run webpack once in dev mode: `npm run build-dev`
+  - Run webpack once in dev mode: `npm run build-dev`
 
-Run webpack in dev and watch mode: `npm run react-dev`
+  - Run webpack in dev and watch mode: `npm run react-dev`
 
 #### Start server
 
-Run node via nodemon: `npm start`
+  - Run node via nodemon: `npm start`
