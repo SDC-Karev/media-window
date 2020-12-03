@@ -1,13 +1,12 @@
 # Media Window
 
-> A Purchase Options component for our Front End Design of Steam
+> A media and product information service for our app Arcadia
 
 ## Related Projects
 
-  - https://github.com/hrr47-FEC-Bailey/media-window
-  - https://github.com/hrr47-FEC-Bailey/reviews
-  - https://github.com/hrr47-FEC-Bailey/similar-games
-  - httos://github.com/hrr47-FEC-Bailey/game-sidebar
+  - https://github.com/SDC-Karev/reviews
+  - https://github.com/SDC-Karev/similar-games
+  - httos://github.com/SDC-Karev/purchase-options-service
 
 ## Table of Contents
 
@@ -26,34 +25,78 @@
 `GET /api/mediaData/:id`
 > Gets all data for the component based on the ID in the URL.
 
-`PUT /api/mediaData/:id`
-> Updates game based on ID in URL. Title, description, an array of videos locations (by URL), and an array of photos locations (by URL) are all able to be updated. Only items sent in the req.body will be updated.
-
-`DELETE /api/mediaData/:id`
-> Deletes game based on ID in URL.
-
-`POST /api/mediaData/:id`
-> Adds a new game to the database with the ID equal to the ID in the URL. Available data fields to be saved are : title, description, an array of video locations (by URL), and an array of photo locations (by URL).
-
 ## Requirements
 
-MongoDB, Mongoose, Express, React, Node, Webpack, and various others.
+PostgreSQL, Express, React, Node, Webpack, and various others.
 See full list of dependencies in located in package.json.
 
 ## Development
 
 ### Installing Dependencies
 
-Ensure you have MongoDB installed and setup for componenet to work; if your server is crashing immediately on launch, that is a good hint that your MongoDB is not installed/setup/running.
+`npm install`
+> Installs all dependencies 
 
-Check out [https://www.mongodb.com] for more information on getting started and/or troubleshooting.
+### Setup Dependencies
+
+#### Create .env file in root project directory
+
+```
+# Remove/comment out this line for production
+  NODE_ENV=development
+
+# Update this if you want to change your Express port
+  SERVER_PORT=3001
+
+# Insert your Postgres location
+  DB_HOST=localhost 
+  
+# Insert your Postgres port  
+  DB_PORT=5432
+
+# Insert your Postgres password 
+  DB_PASSWORD=supersecretpassword
+  
+# Insert your Postgres username
+  DB_USER=yourUsernameHere
+  
+# Insert your database name
+  DB_NAME=media-window
+```
+
+#### Images
+
+Data generation requires 1000 images. Change this to a more reasonable number on line 14 of `database/dataGeneration.js` by reducing max to the number of images you are using. When saving images, use the following name formatting: image[number].jpg where [number] = a sequentially increasing number beginning at 1. ex: image1.jpg, image2.jpg, etc.
+
+Update line 70 of ```media-window/client/src/component/MediaWindow.jsx``` with your images location.
+
+#### Generate data
 
 From within the root directory:
 
-```sh
-npm install -g webpack
-npm install
-npm run seed
-npm run react-dev
-npm start
-```
+`npm run generate`
+
+> This will run `database/dataGeneration.js` and save the data into a CSV file in the project root directory.
+
+#### Seed database
+
+Ensure you have PostgreSQL installed and setup for componenet to work; if your server is crashing immediately on launch, that is a good hint that PG is not installed/setup/running.
+
+Update line 4 of `database/postgresSeed.sql` to point to the full path of the CSV created in the previous setup if you want to use this script to seed the database.
+
+From the project root directory: `psql YOUR_USERNAME -h YOUR_PG_HOST_IP (127.0.0.1 for localhost) -d SOME_DATABASE -f database/postgresSeed.sql`
+
+#### Start webpack
+
+> Run webpack in production mode
+`npm run build` 
+
+> Run webpack once in dev mode. If you make any changes, you will need to run this again to have webpack rebuild with your changes.
+`npm run build-dev`
+
+> Set webpack to watch in dev mode to autobuild on save.
+`npm run react-dev`
+
+#### Start server
+> Runs node via nodemon
+`npm start`
