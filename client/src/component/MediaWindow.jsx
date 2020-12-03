@@ -57,32 +57,6 @@ class MediaWindow extends React.Component {
     this.setState({ id: newID });
   }
 
-  // getData() {
-  //   const game = this.state;
-  //   axios.get(`/api/mediaData/${game.id}`)
-  //     .then(({ data }) => {
-  //       const imagesArr = [];
-  //       const videoArr = [];
-  //       const gameData = data[0];
-  //       for (let i = 0; i < gameData.images.length; i += 1) {
-  //         imagesArr.push({ image: `https://hrr47-sdc-steamy.s3.us-east-2.amazonaws.com/media-window/${gameData.images[i]}`, isActive: false });
-  //       }
-  //       for (let j = 0; j < gameData.videos.length; j += 1) {
-  //         videoArr.push({ video: `https://www.youtube.com/embed/${gameData.videos[j]}`, isActive: true });
-  //         console.log(videoArr, 'videoArr');
-  //       }
-  //       this.setState({
-  //         data,
-  //         currentMedia: gameData.videoArr[0].video,
-  //         images: imagesArr,
-  //         video: videoArr,
-  //       });
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }
-
   getData() {
     const game = this.state;
     axios.get(`/api/mediaData/${game.id}`)
