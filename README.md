@@ -86,9 +86,7 @@ Update line 70 of ```media-window/client/src/component/MediaWindow.jsx``` with y
 #### Start webpack
 
   - Run webpack in production mode: `npm run build` 
-
   - Run webpack once in dev mode: `npm run build-dev`
-
   - Run webpack in dev and watch mode: `npm run react-dev`
 
 #### Start server
