@@ -35,7 +35,6 @@ See full list of dependencies in located in package.json.
 ### Installing Dependencies
 
 `npm install`
-> Installs all dependencies 
 
 ### Setup Dependencies
 
@@ -72,11 +71,9 @@ Update line 70 of ```media-window/client/src/component/MediaWindow.jsx``` with y
 
 #### Generate data
 
-From within the root directory:
+From within the root directory: `npm run generate`
 
-`npm run generate`
-
-> This will run `database/dataGeneration.js` and save the data into a CSV file in the project root directory.
+This will run `database/dataGeneration.js` and save the data into a CSV file in the project root directory.
 
 #### Seed database
 
@@ -88,15 +85,16 @@ From the project root directory: `psql YOUR_USERNAME -h YOUR_PG_HOST_IP (127.0.0
 
 #### Start webpack
 
-> Run webpack in production mode
+Run webpack in production mode
 `npm run build` 
 
-> Run webpack once in dev mode. If you make any changes, you will need to run this again to have webpack rebuild with your changes.
+Run webpack once in dev mode. If you make any changes, you will need to run this again to have webpack rebuild with your changes.
 `npm run build-dev`
 
-> Set webpack to watch in dev mode to autobuild on save.
+Set webpack to watch in dev mode to autobuild on save.
 `npm run react-dev`
 
 #### Start server
-> Runs node via nodemon
+
+Runs node via nodemon
 `npm start`
